@@ -1,16 +1,363 @@
 ---
-
+import "@fontsource/poppins";
+import "./styles/styles.css";
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4wrd Momentum Trucking</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    /> <!-- Add Bootstrap Icons -->
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background: var(--primary-blue);">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#welcome">
+          <img src="/banner.jpg" alt="4wrd Momentum Logo" class="me-2 navbar-brand-img" style="height: 40px; border-radius: 0.5rem;" />
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center justify-content-center w-100">
+            <li class="nav-item"><a class="nav-link rounded-pill mx-1 px-3 py-2 btn-glow" href="#welcome">Welcome</a></li>
+            <li class="nav-item"><a class="nav-link rounded-pill mx-1 px-3 py-2 btn-glow" href="#about">About Us</a></li>
+            <li class="nav-item"><a class="nav-link rounded-pill mx-1 px-3 py-2 btn-glow" href="#pay">Pay & Benefits</a></li>
+            <li class="nav-item"><a class="nav-link rounded-pill mx-1 px-3 py-2 btn-glow" href="#trucks">Our Trucks</a></li>
+            <li class="nav-item"><a class="nav-link rounded-pill mx-1 px-3 py-2 btn-glow" href="#testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link rounded-pill mx-1 px-3 py-2 btn-glow" href="#contactUs">Contact Us!</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Logo Banner -->
+    <div class="logo-banner position-relative overflow-hidden text-center" style="height: 60vh; background: url('/Truck1.png') no-repeat center/cover; animation: zoomIn 20s infinite alternate;">
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(220, 38, 38, 0.3));"></div>
+      <div class="position-absolute top-50 start-50 translate-middle text-white z-10">
+        <h1 class="display-3 fw-bold text-shadow animate-fadeIn">Drive with 4wrd Momentum</h1>
+        <p class="lead fw-light animate-fadeIn delay-1">Expedited Trucking Excellence</p>
+      </div>
+    </div>
+
+    <!-- Welcome Banner -->
+    <section id="welcome" class="banner text-center py-5 blue">
+      <div class="container">
+        <h1 class="display-2 fw-bold text-white text-shadow mb-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Join 4wrd Momentum Trucking – Home Every Weekend, Guaranteed!</h1>
+        <p class="text-white lead mb-4">
+          Family-owned and operated, 4wrd Momentum Trucking is expanding across the nation and needs experienced and new CDL drivers TODAY! Steady loads, top pay, great benefits, and reliable home time await those ready to drive with the best.
+        </p>
+        <p class="text-white font-weight-bold mb-4">No Trucking Experience or Recent Graduate? No Problem! We'll pay you to train and get started.</p>
+        <ul class="list-unstyled text-start mx-auto" style="max-width: 800px;">
+          <div class="row">
+            <div class="col-md-6">
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">All the Miles You Want: Consistent routes and loads every week!</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Great Pay: Regional drivers average $1,400-$1,800 weekly.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Paid for Every Mile: Loaded or empty – you get compensated.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Guaranteed Home Time: Home every weekend, no exceptions!</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Paid Training: Up to $1,000/week for experienced CDL-A drivers.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Pre-Loaded Loads: 90% ready to go, minimal wait time.</span></li>
+            </div>
+            <div class="col-md-6">
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Performance Bonuses: Quarterly safety bonuses up to $600.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Seniority Bonus: Annual rewards from $500 to $2,500 for loyal team members.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Comprehensive Benefits: Medical, dental, and vision insurance.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Retirement Package: 401(k) with 50% company match up to 6%.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Paid Time Off: Holidays and vacation time included.</span></li>
+              <li class="d-flex align-items-start mb-3"><span class="checkmark me-3" >✓</span><span class="text-white">Top Equipment: Modern trucks – see our fleet below!</span></li>
+            </div>
+          </div>
+        </ul>
+        <a href="#contactUs" class="button">Apply Now and Join the Team!</a>
+      </div>
+    </section>
+
+    <!-- About Us -->
+<section id="about" class="py-5 white">
+	<div class="container">
+	  <h2 class="display-5 fw-bold mb-4 text-center" style="color: #DC2626;">About Us</h2>
+	  <p class="lead text-center mb-5">
+		Welcome to 4wrd Momentum Trucking, a family-owned company dedicated to excellence since its founding over two decades ago. Based in the heart of the nation, we lead the industry with top-tier service, treating our team like family while offering competitive opportunities.
+	  </p>
+  
+	  <div class="row g-4">
+		<!-- Company Overview Box -->
+		<div class="col-md-4">
+		  <div class="about-box p-4 rounded shadow" style="background-color: #B3CDE0; color: #1E3A8A;">
+			<h4 class="mb-3" style="color: #DC2626;">Our Journey</h4>
+			<ul class="list-unstyled">
+			  <li><strong>Founded:</strong> Over 20 years ago</li>
+			  <li><strong>Origin:</strong> Family-run, local freight</li>
+			  <li><strong>Growth:</strong> Expanded fleet and services</li>
+			  <li><strong>Reputation:</strong> Stability and quality</li>
+			  <li><strong>Rating:</strong> Strong DOT rating</li>
+			</ul>
+		  </div>
+		</div>
+  
+		<!-- Team Box -->
+		<div class="col-md-4">
+		  <div class="about-box p-4 rounded shadow" style="background-color: #B3CDE0; color: #1E3A8A;">
+			<h4 class="mb-3" style="color: #DC2626;">Our People</h4>
+			<ul class="list-unstyled">
+			  <li><strong>Team:</strong> Drivers, mechanics, and staff</li>
+			  <li><strong>Focus:</strong> Growth and well-being</li>
+			  <li><strong>Perk:</strong> Guaranteed weekends home</li>
+			  <li><strong>Culture:</strong> Supportive family vibe</li>
+			  <li><strong>Training:</strong> Opportunities for all</li>
+			</ul>
+		  </div>
+		</div>
+  
+		<!-- Values Box -->
+		<div class="col-md-4">
+		  <div class="about-box p-4 rounded shadow" style="background-color: #B3CDE0; color: #1E3A8A;">
+			<h4 class="mb-3" style="color: #DC2626;">Our Commitment</h4>
+			<ul class="list-unstyled">
+			  <li><strong>Service:</strong> Top-tier road delivery</li>
+			  <li><strong>Freight:</strong> Year-round availability</li>
+			  <li><strong>Peace:</strong> Unmatched industry mind</li>
+			  <li><strong>Future:</strong> Bright growth ahead</li>
+			  <li><strong>Invite:</strong> Join our family</li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+  
+	  <div class="mt-5 text-center">
+		<p class="lead mb-4">
+		  With a strong market presence and a dedication to our team, 4wrd Momentum Trucking is poised for a bright future. Explore our legacy and consider joining us on this journey!
+		</p>
+		<a href="#contact" class="btn btn-primary mt-3" style="background-color: #DC2626; border-color: #DC2626;">Join Our Team!</a>
+	  </div>
+	</div>
+  </section>
+
+    <!-- Pay & Benefits -->
+<section id="pay" class="py-5 blue">
+	<div class="container">
+	  <h2 class="display-5 fw-bold mb-4 text-center">Pay & Benefits</h2>
+	  <p class="lead text-center">Join our team and enjoy competitive pay, comprehensive benefits, and a driver-focused culture that gets you home every weekend, guaranteed!</p>
+	  
+	  <div class="row mt-4">
+		<!-- Pay Details -->
+		<div class="col-md-6">
+		  <h3 class="text-white">Competitive Pay Structure</h3>
+		  <table class="rounded-table theme-table">
+			<tbody>
+			  <tr><td><strong>5+ Years Experience:</strong></td><td>$0.60/Mile</td></tr>
+			  <tr><td><strong>4 Years Experience:</strong></td><td>$0.59/Mile</td></tr>
+			  <tr><td><strong>3 Years Experience:</strong></td><td>$0.58/Mile</td></tr>
+			  <tr><td><strong>2 Years Experience:</strong></td><td>$0.57/Mile</td></tr>
+			  <tr><td><strong>1 Year Experience:</strong></td><td>$0.56/Mile</td></tr>
+			  <tr><td><strong>0-12 Months Experience:</strong></td><td>$0.52/Mile</td></tr>
+			</tbody>
+		  </table>
+		  <p class="mt-3 text-white"><strong>Average Earnings:</strong> Regional CDL drivers earn $1,400-$1,800/week.</p>
+		  <p class="text-white">We pay for every mile you drive, loaded or empty, ensuring fair compensation for your hard work.</p>
+		</div>
+		
+		<!-- Benefits Details -->
+		<div class="col-md-6">
+		  <h3 class="text-white">Comprehensive Benefits</h3>
+		  <table class="rounded-table theme-table">
+			<tbody>
+			  <tr><td><strong>Guaranteed Home Time:</strong></td><td>Home every weekend, no exceptions.</td></tr>
+			  <tr><td><strong>Paid Training:</strong></td><td>Up to $1,000/week for experienced CDL-A drivers.</td></tr>
+			  <tr><td><strong>Performance Bonuses:</strong></td><td>Quarterly safety and performance bonuses up to $600.</td></tr>
+			  <tr><td><strong>Seniority Bonus:</strong></td><td>Annual bonuses from $500 to $2,500 for loyal drivers.</td></tr>
+			  <tr><td><strong>Health Benefits:</strong></td><td>Medical, Dental, and Vision Insurance.</td></tr>
+			  <tr><td><strong>Retirement Plan:</strong></td><td>401(k) with 50% company match up to 6%.</td></tr>
+			  <tr><td><strong>Paid Time Off:</strong></td><td>Paid holidays and vacation time.</td></tr>
+			  <tr><td><strong>Top Equipment:</strong></td><td>Drive the best trucks, pre-loaded and tarped for 90% of loads.</td></tr>
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+  
+	  <!-- Additional Information -->
+	  <div class="mt-4 text-center">
+		<p class="text-white"><strong>No Flatbed Experience? No Problem!</strong> We offer paid training to help you join our fleet, whether you're a recent graduate or new to flatbed.</p>
+		<p class="text-white"><strong>All the Miles You Want:</strong> Consistent miles every week to keep you moving and earning.</p>
+		<a href="#contact" class="button mt-3">Apply Now!</a>
+	  </div>
+	</div>
+  </section>
+
+  <!-- Our Trucks -->
+<section id="trucks" class="py-5 white">
+	<div class="container">
+	  <h2 class="display-5 fw-bold mb-4 text-center" style="color: var(--primary-red);">Our Trucks</h2>
+	  <p class="lead text-center mb-5" style="color: var(--primary-blue);">
+		We operate a fleet of modern Freightliners and Volvos, designed for comfort, reliability, and efficiency.
+	  </p>
+  
+	  <!-- Truck Carousel -->
+	  <div id="truckCarousel" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <!-- CMS Loop Start: Replace with dynamic content for carousel items -->
+		  <div class="carousel-item active">
+			<img src="/Truck1.png" class="d-block w-100" alt="Truck Passenger Side" style="height: 500px; object-fit: cover; border-radius: 1rem;">
+			<div class="carousel-caption d-none d-md-block" style="background-color: rgba(30, 58, 138, 0.7); border-radius: 0.75rem; padding: 1rem;">
+			  <h4 style="color: var(--primary-red);">Passenger Side Exterior</h4>
+			  <p style="color: var(--primary-white);">Spacious and durable design for long-haul comfort. Built with high-quality materials for reliability on the road, ensuring every journey is smooth and secure.</p>
+			</div>
+		  </div>
+  
+		  <div class="carousel-item">
+			<img src="/Truck2.png" class="d-block w-100" alt="Truck Kitchenette" style="height: 500px; object-fit: cover; border-radius: 1rem;">
+			<div class="carousel-caption d-none d-md-block" style="background-color: rgba(30, 58, 138, 0.7); border-radius: 0.75rem; padding: 1rem;">
+			  <h4 style="color: var(--primary-red);">Kitchenette Setup</h4>
+			  <p style="color: var(--primary-white);">Compact microwave and storage for quick meals during breaks, designed for convenience and efficiency on the go.</p>
+			</div>
+		  </div>
+  
+		  <div class="carousel-item">
+			<img src="/Truck3.png" class="d-block w-100" alt="Truck Kitchenette" style="height: 500px; object-fit: cover; border-radius: 1rem;">
+			<div class="carousel-caption d-none d-md-block" style="background-color: rgba(30, 58, 138, 0.7); border-radius: 0.75rem; padding: 1rem;">
+			  <h4 style="color: var(--primary-red);">Storage Compartments</h4>
+			  <p style="color: var(--primary-white);">Ample space for groceries, tools, and personal items, offering organized and accessible storage for all your needs.</p>
+			</div>
+		  </div>
+  
+		  <div class="carousel-item">
+			<img src="/Truck4.png" class="d-block w-100" alt="Truck Kitchenette" style="height: 500px; object-fit: cover; border-radius: 1rem;">
+			<div class="carousel-caption d-none d-md-block" style="background-color: rgba(30, 58, 138, 0.7); border-radius: 0.75rem; padding: 1rem;">
+			  <h4 style="color: var(--primary-red);">Refrigerator Area</h4>
+			  <p style="color: var(--primary-white);">Built-in cooling to keep food fresh on extended trips, with ample capacity for long-haul convenience.</p>
+			</div>
+		  </div>
+  
+		  <div class="carousel-item">
+			<img src="/Truck5.png" class="d-block w-100" alt="Truck Kitchenette" style="height: 500px; object-fit: cover; border-radius: 1rem;">
+			<div class="carousel-caption d-none d-md-block" style="background-color: rgba(30, 58, 138, 0.7); border-radius: 0.75rem; padding: 1rem;">
+			  <h4 style="color: var(--primary-red);">Dining Nook</h4>
+			  <p style="color: var(--primary-white);">Cozy spot for meals and relaxation during downtime, perfect for unwinding after a long drive.</p>
+			</div>
+		  </div>
+		  <!-- CMS Loop End -->
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#truckCarousel" style="opacity: 70%;" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#truckCarousel" style="opacity: 70%;" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+  
+	  <!-- Thumbnails Gallery -->
+	  <div class="truck-thumbnails mt-4">
+		<!-- CMS Loop Start: Replace with dynamic content for thumbnails -->
+		<div class="thumbnail-item" data-bs-target="#truckCarousel" data-bs-slide-to="0">
+		  <img src="/Truck1.png" alt="Thumbnail 1" class="img-fluid rounded shadow">
+		</div>
+		<div class="thumbnail-item" data-bs-target="#truckCarousel" data-bs-slide-to="1">
+		  <img src="/Truck2.png" alt="Thumbnail 2" class="img-fluid rounded shadow">
+		</div>
+		<div class="thumbnail-item" data-bs-target="#truckCarousel" data-bs-slide-to="2">
+		  <img src="/Truck3.png" alt="Thumbnail 3" class="img-fluid rounded shadow">
+		</div>
+		<div class="thumbnail-item" data-bs-target="#truckCarousel" data-bs-slide-to="3">
+		  <img src="/Truck4.png" alt="Thumbnail 4" class="img-fluid rounded shadow">
+		</div>
+		<div class="thumbnail-item" data-bs-target="#truckCarousel" data-bs-slide-to="4">
+		  <img src="/Truck5.png" alt="Thumbnail 5" class="img-fluid rounded shadow">
+		</div>
+		<!-- CMS Loop End -->
+	  </div>
+  
+	  <div class="mt-5 text-center">
+		<p class="lead mb-4" style="color: var(--primary-blue);">
+		  Explore our fleet and see why our trucks are built for the long haul. Join a team that values quality and comfort!
+		</p>
+		<a href="#contact" class="btn btn-primary mt-3" style="background-color: var(--primary-red);border-color: var(--primary-red);">Learn More</a>
+	  </div>
+	</div>
+  </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5 blue">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 2rem;">
+                  &#x1F464;
+                </div>
+                <blockquote class="blockquote mb-3">
+                  <p class="mb-1">"Great company to work for!"</p>
+                </blockquote>
+                <footer class="blockquote-footer text-muted">- Applicant A</footer>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 2rem;">
+                  &#x1F464;
+                </div>
+                <blockquote class="blockquote mb-3">
+                  <p class="mb-0">"Excellent benefits and supportive team."</p>
+                </blockquote>
+                <footer class="blockquote-footer text-muted">- Anonymous</footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contactUs" class="py-5 white">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>We're Hiring!</h3>
+            <form name="resume-form" method="POST" data-netlify="true" enctype="multipart/form-data">
+              <input type="hidden" name="form-name" value="resume-form" />
+              <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Your Name" required /></div>
+              <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Your Email" required /></div>
+              <div class="mb-3"><input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx" required /></div>
+              <div class="mb-3"><textarea class="form-control" name="message" placeholder="Message" rows="4"></textarea></div>
+              <button type="submit" class="btn btn-primary">Apply Now</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <h3>Our Location</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.119763973046!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sus!4v1569475173142"
+              width="100%"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-white blue text-center py-3">
+      <p>&copy; 2025 4wrd Momentum LLC</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
+<!--facebook: https://www.facebook.com/people/4WRD-Momentum-LLC/61569325774092/# -->

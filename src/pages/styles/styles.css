@@ -1,0 +1,579 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-red: #DC2626;
+  --primary-blue: #1E3A8A;
+  --primary-white: #FFFFFF;
+  --primary-gray: #6D6D6D; /* Retained for potential reuse */
+  --dark-gray: #4A4A4A;    /* Retained for potential reuse */
+  --button-color: #87CEEB; /* Light sky blue */
+  --glow-color: rgba(135, 206, 235, 0.6);
+  --hover-glow: rgba(135, 206, 235, 0.8);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--primary-white);
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px; /* Increased to ensure navbar is fully visible */
+}
+
+/* Navbar Styles */
+nav {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 70px; /* Use min-height to allow growth if needed */
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  overflow: visible; /* Ensure content isn’t cut off */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking of the brand area */
+}
+
+.navbar-brand img {
+  height: 40px !important; /* Fixed height */
+  width: 100% !important; /* Ensure width scales with container */
+  min-height: 40px !important; /* Fallback to prevent shrinking */
+  max-height: 40px !important; /* Prevent growing */
+  border-radius: 0.5rem;
+  object-fit: contain; /* Ensure the image fits without distortion */
+  vertical-align: middle; /* Align with text */
+}
+
+/* Override general img rule for navbar logo specificity */
+img.navbar-brand-img {
+  height: 40px !important;
+  width: 100% !important; /* Match container width */
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: center !important;
+  flex-wrap: nowrap; /* Prevent wrapping into two rows */
+}
+
+.navbar-nav .nav-link {
+  color: #FFFFFF !important;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center; /* Ensure text is centered */
+}
+
+.navbar-nav .nav-item .btn-glow {
+  background: var(--primary-red);
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 15px !important; /* Reduced radius for smaller size */
+  padding: 0.3rem 1rem !important; /* Reduced padding for smaller buttons */
+  margin: 0 0.15rem !important; /* Reduced margin for tighter fit */
+  transition: all 0.4s ease !important;
+  display: inline-flex !important; /* Use flex for better centering */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  box-shadow: 0 0 8px var(--glow-color) !important; /* Reduced glow size */
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Reduced spacing for compactness */
+  font-size: 0.7rem !important; /* Reduced font size */
+  width: auto; /* Allow width to fit content */
+}
+
+.navbar-nav .nav-item .btn-glow:hover {
+  background: linear-gradient(to right, #4682B4, var(--button-color));
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 0 12px var(--hover-glow) !important; /* Adjusted glow */
+  transform: scale(1.05) !important;
+}
+
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fix for Hamburger Menu Overlap and Background */
+.navbar-collapse {
+  background: transparent; /* Ensure no background */
+  box-shadow: none; /* Remove shadow to eliminate outline effect */
+}
+
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 0; /* Remove padding on small screens */
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 70px; /* Position below navbar */
+    left: 0;
+    width: 100%;
+    padding: 1rem; /* Add internal padding */
+    background: transparent; /* Ensure no background */
+    border: none; /* Remove any potential border */
+  }
+
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    background: transparent; /* Removed white background */
+  }
+
+  .navbar-nav .nav-item .btn-glow {
+    width: 90%; /* Increased width to fit text */
+    margin: 0.5rem 0 !important; /* Vertical spacing */
+    font-size: 0.8rem !important; /* Slightly reduced for mobile */
+    padding: 0.4rem 1rem !important; /* Adjusted padding */
+    text-align: center; /* Ensure text centering */
+    display: inline-flex !important; /* Use flex for centering */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    box-shadow: none; /* Remove glow to avoid outline effect */
+  }
+
+  .navbar-nav .nav-item .btn-glow:hover {
+    box-shadow: 0 0 12px var(--hover-glow) !important; /* Reapply glow on hover only */
+  }
+
+  .navbar-brand img {
+    height: 40px !important; /* Force fixed height on mobile */
+    width: 100% !important; /* Match container width */
+    min-height: 40px !important; /* Fallback to prevent shrinking */
+    max-height: 40px !important; /* Prevent growing */
+    object-fit: contain; /* Ensure the image fits without distortion */
+    vertical-align: middle; /* Align with text */
+  }
+}
+
+/* Table Styles */
+.rounded-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.theme-table {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight transparency for blue background */
+  color: var(--primary-white);
+}
+
+.theme-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-table tr:last-child td {
+  border-bottom: none;
+}
+
+.theme-table tr:hover {
+  background-color: rgba(220, 38, 38, 0.2); /* Subtle red hover effect */
+}
+
+.theme-table td:first-child {
+  font-weight: bold;
+  width: 50%;
+}
+
+.theme-table td:last-child {
+  text-align: right;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .navbar-nav {
+    flex-direction: row; /* Keep horizontal on small screens */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center; /* Center items */
+  }
+
+  .navbar-nav .nav-item {
+    flex: 0 0 auto; /* Prevent items from stretching */
+    margin: 0 0.1rem !important; /* Tighten spacing */
+  }
+
+  .navbar-nav .nav-item .btn-glow {
+    padding: 0.3rem 0.8rem !important; /* Further reduced for small screens */
+    font-size: 0.6rem !important; /* Smaller font for compactness */
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    padding: 0.75rem;
+  }
+
+  section {
+    padding: 6rem 2rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+/* About Us Box Styles */
+.about-box {
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-box ul {
+  padding-left: 1rem;
+}
+
+.about-box ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.about-box ul li:last-child {
+  border-bottom: none;
+}
+
+.about-box ul li strong {
+  color: #DC2626;
+}
+
+/* Carousel Styles */
+#truckCarousel .carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#truckCarousel .carousel-item.active img {
+  transform: scale(1.05);
+}
+
+#truckCarousel .carousel-caption {
+  background-color: rgba(30, 58, 138, 0.5); /* Semi-transparent blue */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
+  text-align: center;
+  backdrop-filter: blur(5px); /* Optional blur for see-through effect */
+}
+
+#truckCarousel .carousel-caption h4 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-red);
+  
+  
+}
+
+#truckCarousel .carousel-caption p {
+  font-size: 1.1rem;
+  color: var(--primary-white);
+}
+
+#truckCarousel .carousel-control-prev-icon, #truckCarousel .carousel-control-next-icon {
+  filter: invert(1); /* White icons for visibility */
+}
+
+#truckCarousel .carousel-control-prev, #truckCarousel .carousel-control-next {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  opacity: 40%;
+}
+
+#truckCarousel .carousel-control-prev:hover, #truckCarousel .carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Thumbnails Styles */
+.truck-thumbnails {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-content: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnail-item {
+  cursor: pointer;
+  width: 100px;
+  height: 75px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  #truckCarousel .carousel-item img {
+    height: 300px;
+  }
+  #truckCarousel .carousel-caption {
+    padding: 0.75rem;
+    bottom: 10px;
+    left: 5%;
+    right: 5%;
+  }
+  #truckCarousel .carousel-caption h4 {
+    font-size: 1.25rem;
+  }
+  #truckCarousel .carousel-caption p {
+    font-size: 0.9rem;
+  }
+  .truck-thumbnails {
+    gap: 0.5rem;
+  }
+  .thumbnail-item {
+    width: 80px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  #truckCarousel .carousel-caption {
+    padding: 1.5rem;
+  }
+}
+
+/* Banner Styles */
+.logo-banner {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  background: url('/Truck1.png') no-repeat center/cover;
+  animation: zoomIn 20s infinite alternate;
+  padding-top: 80px; /* Increased to match updated body padding */
+}
+
+.logo-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(220, 38, 38, 0.3));
+  z-index: 1;
+}
+
+.logo-banner .text-white {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Section and Content Styles */
+section {
+  padding: 3rem 1rem; /* Default padding */
+}
+
+section:first-of-type {
+  padding-top: 6rem; /* Extra padding for first section under navbar */
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h2 {
+  font-size: larger;
+}
+
+p {
+  color: var(--primary-blue);
+  text-align: center;
+}
+
+/* Color Classes */
+.blue {
+  background-color: var(--primary-blue);
+}
+
+.blue h1,
+.blue h2 {
+  color: var(--primary-red);
+}
+
+.blue p {
+  color: var(--primary-white);
+}
+
+.white {
+  background-color: var(--primary-white);
+}
+
+.white h2 {
+  color: var(--primary-red);
+}
+
+.white p {
+  color: var(--primary-blue);
+}
+
+/* Image and Button Styles */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Override general img rule for navbar logo specificity */
+img.navbar-brand-img {
+  height: 40px !important;
+  width: 100% !important; /* Match container width */
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+.rounded.shadow {
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rounded.shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #B22222; /* Darker red as darken() isn't supported */
+}
+
+/* Map Iframe */
+section iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 0;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Checkmark Styling for Welcome Section */
+.checkmark {
+  font-size: 1.5rem; /* Consistent size */
+  color: var(--primary-red); /* White checkmark */
+  margin-top: 0.2rem; /* Fine-tune vertical alignment */
+  line-height: 1; /* Align with text */
+  font-weight: bold; /* Make it stand out */
+}
+
+/* Ensure columns stack on small screens */
+@media (max-width: 767.98px) {
+  .row > .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
