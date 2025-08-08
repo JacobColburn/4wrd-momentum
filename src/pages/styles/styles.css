@@ -577,3 +577,28 @@ section iframe {
 .transition-all {
   transition: all 0.3s ease;
 }
+
+
+/* src/styles/styles.css */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-white) !important; /* White on hover */
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .social-links a {
+    font-size: 1.5rem !important; /* Smaller icons on mobile */
+  }
+}

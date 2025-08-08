@@ -1,0 +1,65 @@
+backend:
+  name: git-gateway
+  branch: main  # Your default branch
+
+media_folder: "public/images/uploads"  # Where uploaded images go
+public_folder: "/images/uploads"       # Public path for images
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "src/content/home.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Video URL", name: "video_url", widget: "string", required: false }
+          - { label: "Hero Title", name: "title", widget: "string" }
+          - { label: "Hero Description", name: "description", widget: "markdown" }
+  - name: "about"
+    label: "About Us"
+    files:
+      - file: "src/content/about.md"
+        label: "About Us"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+  - name: "pay_benefits"
+    label: "Pay & Benefits"
+    files:
+      - file: "src/content/pay-benefits.md"
+        label: "Pay & Benefits"
+        name: "pay_benefits"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+  - name: "trucks"
+    label: "Our Trucks"
+    folder: "src/content/trucks"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Truck Name", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Quote", name: "quote", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+  - name: "contact"
+    label: "Contact Us"
+    files:
+      - file: "src/content/contact.md"
+        label: "Contact Us"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Map Iframe Code", name: "iframe", widget: "text" }
+          - { label: "Contact Info", name: "info", widget: "markdown" }
