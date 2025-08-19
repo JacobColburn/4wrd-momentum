@@ -255,6 +255,7 @@ img.navbar-brand-img {
 .about-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(220, 38, 38, 0.2); 
 }
 
 .about-box ul {
